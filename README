@@ -16,20 +16,37 @@ LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT,
 NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
 CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
------------------------------------------------------------------
+******************************************************************
+
+DOCUMENTATION
+-------------
 
 Source code is short enough to be its own documentation.
 
+
+USAGE
+-----
+
 Here is a short usage example :
 
-(with-output-to-string (s)
-  (xml-plist:with-xml-plist (s)
-    (xml-plist:with-dict
-      (xml-plist:key "all your base")
-      (xml-plist:value "are belong to us")
-      (xml-plist:key-value "message" "Hello world !"))
-    (xml-plist:with-array
-      (dotimes (i 10)
-	(xml-plist:item i)))
-    (xml-plist:item '("this" "is" "serialized" "into"
-		      "an" "array" "of" "strings"))))
+
+ (with-output-to-string (s)
+   (xml-plist:with-xml-plist (s)
+     (xml-plist:with-dict
+       (xml-plist:key "all your base")
+       (xml-plist:value "are belong to us")
+       (xml-plist:key-value "message" "Hello world !"))
+     (xml-plist:with-array
+       (dotimes (i 10)
+         (xml-plist:item i)))
+     (xml-plist:item '("this" "is" "serialized" "into"
+                       "an" "array" "of" "strings"))))
+
+
+EXTENSIBILITY
+-------------
+
+You can further specialize XML-PLIST:ITEM to handle more types.
+
+One could easily extend it using MOP to serialize any simple-object
+into an XML-PList.
