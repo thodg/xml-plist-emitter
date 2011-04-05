@@ -17,7 +17,9 @@
 ;;  NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN
 ;;  CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-(defpackage :xml-plist-emitter.system)
+(in-package :cl-user)
+
+(defpackage :xml-plist-emitter.system
   (:use :cl :asdf))
 
 (in-package :xml-plist-emitter.system)
